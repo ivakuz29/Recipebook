@@ -23,19 +23,22 @@
     </header>
 
     <section class="create-form">
+        <div class = "title-section">
         <form id="Addrecipe">
             <label for="title">Insert Recipe Name</label>
             <input type="text" id="title" required>
-
+            
             <label for="image">Upload an Image</label>
             <input type ="file" id="image" required>
-
+        </div>
+        <div class = "recipe-section">
             <label for="recipe">Insert Recipe</label>
             <textarea id="recipe" required></textarea>
-
+        </div>
+        <div class = "ingredients-section">
             <label for="ingredients">Ingredients</label>
             <textarea id="ingredients" required></textarea>
-            
+        </div>  
 
             <button type = "submit">Send Recipe</button>
         </form>

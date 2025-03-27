@@ -36,3 +36,48 @@ section {
     display: flex;
     flex-direction: row; 
 }
+
+.title-section, .recipe-section, .ingredients-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    text-align: center;
+    color: #000000;
+    gap: 20px;
+    flex-direction: column;
+    font-size: 25px; 
+
+}
+
+.title-section{
+    
+    
+}
+
+.recipe-section, .ingredients-section {
+    height: auto;
+    min-height: 400px;
+    flex-grow: 1;
+}
+
+.ingredients-section textarea {
+    width: 70%;
+    min-height: 210px;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    align-self: flex-start; /* This keeps the textarea anchored to the top */
+}
+
+.recipe-section textarea
+{
+
+width: 70%;
+min-height: 300px;
+resize: vertical;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
