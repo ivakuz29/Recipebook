@@ -81,3 +81,69 @@ padding: 10px;
 border: 1px solid #ddd;
 border-radius: 5px;
 }
+
+
+h1 {
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+
+text-align: center;
+margin: 0;
+color: #000000;
+padding: 0; 
+}
+
+.description {
+
+}
+
+.recipies-container {
+    padding:0 110px; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.about-container {
+    display: flex; 
+    flex-direction: row;
+    gap: 45px; 
+
+}
+
+.about-container img {
+    
+    
+}
+
+h2 {
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 60px;
+line-height: 75px;
+text-align: center;
+margin: 0; 
+color: #000000;
+
+
+}
+
+.view-recipe {
+    padding: 110px;
+
+}
+
+.recipe-main {
+    display: flex; 
+    flex-direction: row;
+    gap: 80px; 
+}
+
+
+.hidden {
+    display: none; 
+}

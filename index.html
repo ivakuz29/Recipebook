@@ -1,22 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
-    
+
     <header>
         <nav class="nav-bar">
-<a href = "#About" class = "nav-button">About</a>
-<a href = "#Menu" class = "nav-button">Menu</a>
-<a href = "Create.html" class = "nav-button">Create</a>
+            <a href="#home" class="nav-button" id = "about">About</a>
+            <a href="#Menu" class="nav-button">Menu</a>
+            <a href="#create" class="nav-button" id = "create">Create</a>
+
         </nav>
     </header>
+    <section class="recipies-container" id ="home">
+        <div class="heading">
+            <h1>About recipe book</h1>
+            <div class="about-container">
+                <img src="Images/Heading-image-example.png">
+                <div class="description">
+                    <p>
+                        About
+                        Recipebook is a website created by me as a side project to collect different varieties of
+                        recipies around the world, with each recipie being given a raiting for how easy or how delicious
+                        it is.
+
+                        Functinal
+                        This website has a simple interface which will allow you to also add your own recipies and look
+                        throught recipies of other users.
+                    </p>
+                    <img src="Images/image 2.png">
+                </div>
+            </div>
+        </div>
+        <div class = "menu"> 
+            <h2>Menu</h2>
+            <div class = "menu-items">
+
+
+            </div>
+    
+
+        </div>
+    </section>
+
+    <section class = "view-recipe" id = "view-recipe">
+        <div class = "recipe-main">
+            <div class = "main-title">
+            <h1>Database Heading</h1>
+            <img src = "Images/Heading-image-example.png">
+            </div>
+        <div class = main-recipe>
+            <h2>Recipe</h2>
+            <p>Recipe</p>
+        </div>
+        <div class = "main-ingredients">
+            <h2>Ingredients</h2>
+            <p>-Tomato </p>
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="create-form" id="create">
+        <div class="title-section">
+            <form id="Addrecipe">
+                <label for="title">Insert Recipe Name</label>
+                <input type="text" id="title" required>
+
+                <label for="image">Upload an Image</label>
+                <input type="file" id="image" required>
+        </div>
+        <div class="recipe-section">
+            <label for="recipe">Insert Recipe</label>
+            <textarea id="recipe" required></textarea>
+        </div>
+        <div class="ingredients-section">
+            <label for="ingredients">Ingredients</label>
+            <textarea id="ingredients" required></textarea>
+        </div>
+
+        <button type="submit">Send Recipe</button>
+        </form>
+    </section>
+
+
 </body>
+
 </html>
