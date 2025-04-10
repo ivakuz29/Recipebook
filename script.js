@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let recipes = getRecipes();
         recipes.splice(index, 1);
         saveRecipes(recipes);
-        displayRecipes();
+        displayrecipes();
     }
 
     function viewRecipe(index) {
