@@ -8,7 +8,7 @@
 body {
   font-family: 'Quicksand', sans-serif;
   padding-top: 120px;
-  background-color: #f8f8f8;
+  background-color: #FFF5E4;
   color: #000;
 }
 
@@ -249,3 +249,15 @@ textarea {
     justify-content: center;
     padding: 50px; 
 }
+
+footer {
+    background: #C1D8C3; /* Same color as the header */
+    padding: 15px 5%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the content in the footer */
+    position: relative; /* Ensures it's positioned correctly on the page */
+    bottom: 0;
+    width: 100%;
+  }
