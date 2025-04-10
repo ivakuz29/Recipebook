@@ -238,9 +238,14 @@ textarea {
     padding: 50px; 
 }
 
-.view-recipe,
+
 .main-recipe,
 .main-ingredients {
     
 
+}
+
+.view-recipe{
+    justify-content: center;
+    padding: 50px; 
 }
