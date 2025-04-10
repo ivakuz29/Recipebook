@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const recipecard = document.createElement('section')
             recipecard.className = "recipe-card"
             recipecard.innerHTML = `
-                <img src ="${recipe.recipeImage} class = "recipe-image">
+                <img src ="${recipe.recipeImage}" class = "recipe-image">
                 <h3 class = "recipe-title"> ${recipe.title}</h3>
                 <button class="delete-btn" data-index="${index}">Delete</button>
 
