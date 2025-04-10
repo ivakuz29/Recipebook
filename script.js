@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const recipeImage = document.getElementById("recipeImage");
     const recipeIngredients = document.getElementById("recipeIngredients");
     const recipeInstructions = document.getElementById("recipeInstructions");
+    let editindex = null
 
     btn_about.addEventListener("click", function () {
         recipies_container.style.display = "flex";
@@ -48,6 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
         // showSection("viewRecipes");
     }
 
+    function editRecipe(index) {
+        let recipes = getRecipes();
+        let recipe =recipes[index]
+        recipeTitle.value = recipe.title
+        recipeIngredients.value = recipe.ingredients
+        recipeInstructions.value = recipe.recipe
+        editindex = index
+        document.getElementById("image").removeAttribute("required")
+        recipies_container.style.display = "none";
+        view_recipe_form.style.display = "none";
+        create_form.style.display = "flex";
+    }
+
+
+
     function getRecipes() {
         return JSON.parse(localStorage.getItem("recipes")) || [];
     }
@@ -66,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src ="${recipe.recipeImage}" class = "recipe-image">
                 <h3 class = "recipe-title"> ${recipe.title}</h3>
                 <button class="delete-btn" data-index="${index}">Delete</button>
+                <button class="edit-btn" data-index="${index}">Edit</button>
 
                 `
             recipecard.addEventListener("click", () => viewRecipe(index));
@@ -76,8 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".delete-btn").forEach(button => {
             button.addEventListener("click", (event) => {
                 event.stopPropagation();
-                const index = event.target.dataset.index;
-                deleteRecipe(index);
+                if (confirm("are you sure?")) {
+                    const index = event.target.dataset.index;
+                    deleteRecipe(index);
+                }
+
+            });
+        });
+        document.querySelectorAll(".edit-btn").forEach(button => {
+            button.addEventListener("click", (event) => {
+                event.stopPropagation();
+                    const index = event.target.dataset.index;
+                    editRecipe(index);
+                
+
             });
         });
 
@@ -89,23 +118,39 @@ document.addEventListener("DOMContentLoaded", function () {
         const ingredients = document.getElementById('ingredients').value
         const recipe = document.getElementById('recipe').value
         const recipeImage = document.getElementById('image').files[0]
+        const handlesave = (imgsrc)=>{
+            const newrecipe = {
+                title, ingredients, recipe, recipeImage: imgsrc
+            }
+            const recipes = getRecipes()
+            if (editindex !== null){
+                recipes[editindex]=newrecipe
+            }
+            else recipes.push(newrecipe)
+            saveRecipes(recipes)
+            displayrecipes()
+            recipeForm.reset()
+            editindex = null 
+        }
+
         if (recipeImage) {
             const reader = new FileReader()
             reader.onload = function (e) {
-                const newrecipe = {
-                    title, ingredients, recipe, recipeImage: e.target.result
-                }
-                const recipes = getRecipes()
-                recipes.push(newrecipe)
-                saveRecipes(recipes)
-                displayrecipes()
-                recipeForm.reset()
+           
+                handlesave(e.target.result)
 
             }
             reader.readAsDataURL(recipeImage);
         }
+        else {
+            let oldimage
+            if (editindex !== null)
+                oldimage = getRecipes()[editindex].recipeImage
+            else oldimage = ""
+            handlesave(oldimage)
+        } 
     })
 
-displayrecipes();
+    displayrecipes();
 }
 );
