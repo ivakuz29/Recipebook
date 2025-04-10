@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const recipes = getRecipes();
         const recipe = recipes[index];
         recipeTitle.textContent = recipe.title;
-        recipeImage.src = recipe.imageInput;
+        recipeImage.src = recipe.recipeimage;
         recipeIngredients.textContent = recipe.ingredients;
         recipeInstructions.textContent = recipe.recipe;
         // showSection("viewRecipes");
