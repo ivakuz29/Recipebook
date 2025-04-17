@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function editRecipe(index) {
         let recipes = getRecipes();
         let recipe =recipes[index]
-        recipeTitle.value = recipe.title
-        recipeIngredients.value = recipe.ingredients
-        recipeInstructions.value = recipe.recipe
+        document.getElementById("title").value=recipe.title
+        document.getElementById("ingredients").value=recipe.ingredients
+        document.getElementById("recipe").value=recipe.recipe
         editindex = index
         document.getElementById("image").removeAttribute("required")
         recipies_container.style.display = "none";
