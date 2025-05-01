@@ -2,37 +2,50 @@
 <html lang="en">
 
 <head>
+    <!-- Angir tegnsett og at innholdet skal være responsivt på alle enheter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tittel på nettsiden som vises i nettleserfanen -->
     <title>Document</title>
+
+    <!-- Kobler til ekstern stilfil for tilpasset design -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+
+    <!-- Importerer skrifttypen "Quicksand" fra Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Importerer skrifttypen "Patrick Hand" fra Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Toppnavigasjon med tre knapper: About, Menu, Create -->
     <header>
         <nav class="nav-bar">
             <a class="nav-button" id="about">About</a>
             <a class="nav-button" id="view_menu">Menu</a>
             <a class="nav-button" id="create">Create</a>
-
         </nav>
     </header>
+
+    <!-- Hovedseksjon som inneholder "About"-informasjon og meny -->
     <section class="recipies-container" id="home">
         <div class="heading">
             <h1>About recipe book</h1>
+
+            <!-- Om-seksjonen med bilde og beskrivelse -->
             <div class="about-container">
                 <img src="Images/Untitled design (1).png" class="heading-image">
                 <div class="description">
                     <p>
-                        About
+                        <!-- Beskrivelse av nettsiden -->
+                        About  
                         Recipebook is a website created by me as a side project to collect different varieties of
                         recipies around the world, with each recipie being given a raiting for how easy or how delicious
                         it is.
 
-                        Functinal
+                        Functinal  
                         This website has a simple interface which will allow you to also add your own recipies and look
                         throught recipies of other users.
                     </p>
@@ -40,53 +53,75 @@
                 </div>
             </div>
         </div>
+
+        <!-- Seksjon for visning av alle oppskrifter (meny) -->
         <div class="menu">
             <h2>Menu</h2>
+            <!-- Her vil oppskrifter bli dynamisk lagt til via JavaScript -->
             <div class="menu-items" id="recipeList">
             </div>
         </div>
     </section>
-    
+
+    <!-- Seksjon som viser én valgt oppskrift med bilde, tekst og ingredienser -->
     <section class="view-recipe" id="view-recipe">
         <div class="recipe-main">
+            <!-- Oppskriftsnavn og bilde -->
             <div class="main-title">
                 <h1 id="recipeTitle">Recipe Name</h1>
                 <img src="Images/Heading-image-example.png" id="recipeImage">
             </div>
-            <div class=main-recipe>
+
+            <!-- Oppskriftstekst -->
+            <div class="main-recipe">
                 <h2>Recipe</h2>
                 <p id="recipeIngredients">Recipe</p>
             </div>
+
+            <!-- Ingrediensliste -->
             <div class="main-ingredients">
                 <h2>Ingredients</h2>
                 <p id="recipeInstructions">-Tomato </p>
             </div>
+        </div>
     </section>
 
+    <!-- Seksjon hvor brukere kan opprette og sende inn en ny oppskrift -->
     <section class="create-form" id="create">
         <form id="Addrecipe" enctype="multipart/form-data">
             <div class="form-container">
+                <!-- Felt for navn og bilde av oppskriften -->
                 <div class="title-section">
                     <label for="title">Insert Recipe Name</label>
                     <input type="text" id="title" required>
+
                     <label for="image">Upload an Image</label>
                     <input type="file" id="image" required>
                 </div>
+
+                <!-- Tekstfelt for oppskrift -->
                 <div class="recipe-section">
                     <label for="recipe">Insert Recipe</label>
                     <textarea id="recipe" required></textarea>
                 </div>
+
+                <!-- Tekstfelt for ingredienser -->
                 <div class="ingredients-section">
                     <label for="ingredients">Ingredients</label>
                     <textarea id="ingredients" required></textarea>
                 </div>
             </div>
+
+            <!-- Send-knapp for å lagre ny oppskrift -->
             <button type="submit" class="button-submit">Send Recipe</button>
         </form>
     </section>
+
+    <!-- Tom bunnseksjon, kan fylles med informasjon senere -->
     <footer>
-        
     </footer>
+
+    <!-- Kobling til ekstern JavaScript-fil for funksjonalitet -->
     <script src="script.js"></script>
 </body>
 
